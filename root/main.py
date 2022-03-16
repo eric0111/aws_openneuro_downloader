@@ -21,14 +21,14 @@ def main():
                 sub_folder =  patient + "/func/"
                 file = patient + "_task-stopsignal_bold_space-MNI152NLin2009cAsym_preproc.nii.gz"
 
-                print("downloading:   " + line[0])
-
                 downloaded_files = os.listdir(DOWNLOAD_FOLDER)
 
-                print(file)
-
                 if(file not in downloaded_files):
-                    s3_client.download_file(bucket, folder+sub_folder+file, DOWNLOAD_FOLDER+ file)
-                    print(line[0] + "-> downloaded :)")
+                    try:
+                        print("downloading:   \n" + file)
+                        s3_client.download_file(bucket, folder+sub_folder+file, DOWNLOAD_FOLDER+ file)
+                        print(line[0] + "-> downloaded :)")
+                    except Exception as e:
+                        print("task not present for "+patient)
 
 main()
