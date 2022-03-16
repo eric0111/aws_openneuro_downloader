@@ -21,7 +21,7 @@ def main():
                 sub_folder =  patient + "/func/"
                 file = patient + "_task-stopsignal_bold_space-MNI152NLin2009cAsym_preproc.nii.gz"
 
-                print("downloading: " + line[0])
+                print("downloading:  " + line[0])
 
                 downloaded_files = os.listdir(DOWNLOAD_FOLDER)
 
