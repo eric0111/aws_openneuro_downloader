@@ -14,8 +14,8 @@ def main():
     files_to_download = "_task-"+task+"_bold_space-MNI152NLin2009cAsym_preproc.nii.gz"
     confounds_to_download = "_task-"+task+"_bold_confounds.tsv"
 
-    export_folder =  "/Users/eb/Desktop/bart/"
-    export_confounds_folder = "/Users/eb/Desktop/bart_confounds/"
+    export_folder =  "/Users/eb/Desktop/bart/" #"/Users/eb/Desktop/stopsignal/"
+    export_confounds_folder = "/Users/eb/Desktop/bart_confounds/" #"/Users/eb/Desktop/stopsignal_confounds/"
 
     ##commands
     print_files_in_bucket = False

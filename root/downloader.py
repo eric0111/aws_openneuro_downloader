@@ -19,7 +19,7 @@ def downloader(partecipants_file, bucket, folder, file_to_download, export_folde
 
                 downloaded_files = os.listdir(export_folder)
 
-                if (file not in downloaded_files):
+                if (complete_file_to_download not in downloaded_files):
                     try:
                         print("downloading:   \n" + complete_file_to_download)
                         s3_client.download_file(bucket, folder + sub_folder + complete_file_to_download, export_folder + complete_file_to_download)
@@ -27,3 +27,5 @@ def downloader(partecipants_file, bucket, folder, file_to_download, export_folde
                         print(line[0] + "-> downloaded :)")
                     except Exception as e:
                         print("task not present for " + patient)
+                # else:
+                #     print(str(complete_file_to_download) + " already downloaded")
